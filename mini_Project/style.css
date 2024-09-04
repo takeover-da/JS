@@ -1,0 +1,17 @@
+p.result{ 
+  display: inline-block; 
+  font-size:30px; 
+  line-height: 30px;
+  border-right: 1px solid #000; 
+  padding-right: 1px; 
+  box-sizing: border-box; 
+  animation: cursor 0.4s infinite;
+  font-weight: bold;
+}
+
+ @keyframes cursor{ 
+   0%{border-right: 5px solid #fff} 
+   50%{border-right: 5px solid #000} 
+   100%{border-right: 5px solid #fff} 
+}
+
