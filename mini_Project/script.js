@@ -153,18 +153,19 @@ function updateCount() {
 // 초기 통계 정보를 표시하는 코드
 updateCount();
 
+
 // 초성 중성 종성까지 모두 분리해서 타이핑하는 효과
 // https://westzero.tistory.com/112
 String.prototype.toKorChars = function() { 
-  var cCho = [ 'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ' ], 
+  let cCho = [ 'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ' ], 
   cJung = [ 'ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ' ], 
   cJong = [ '', 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ' ], cho, jung, jong; 
    
-  var str = this, 
+  let str = this, 
       cnt = str.length, 
       chars = [], 
       cCode; 
-  for (var i = 0; i < cnt; i++) { 
+  for (let i = 0; i < cnt; i++) { 
     cCode = str.charCodeAt(i); 
     if (cCode == 32) { 
       chars.push(" ");
@@ -200,34 +201,34 @@ String.prototype.toKorChars = function() {
  
  
  //타이핑할 문장
-    var result  = "투 두 리스트....!";
-    var typeing1=[];
+    let result  = "To Do List....!";
+    let typeing1=[];
     result = result.split(''); // 한글자씩자름
  
     //각글자 초성,중성,종성으로 나눔
-    for(var i =0; i<result.length; i++){
+    for(let i =0; i<result.length; i++){
       typeing1[i]=result[i].toKorChars();
     }
  
     //출력할 엘리먼트요소 가져옴 
-    var resultDiv = document.getElementsByClassName("result")[0];
+    let resultDiv = document.getElementsByClassName("result")[0];
  
-    var text = "";
-    var i=0; 
-    var j=0; 
+    let text = "";
+    let i=0; 
+    let j=0; 
  
     //총글자수
-    var imax = typeing1.length;
+    let imax = typeing1.length;
  
     //setInterval을 이용해 반복적으로 출력 
-    var inter = setInterval(typi,150);
+    let inter = setInterval(typi,150);
  
  
     function typi(){
       //글자수만큼 반복후 종료 
       if(i<=imax-1){
         //각 글자가 초성 중성 종성 순서대로 추가되도록 
-        var jmax = typeing1[i].length;
+        let jmax = typeing1[i].length;
         resultDiv.innerHTML = text + typeing1[i][j];
         j++;
         if(j==jmax){
