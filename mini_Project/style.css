@@ -1,3 +1,4 @@
+/* 제목 스타일 */
 p.result{ 
   display: inline-block; 
   font-size:30px; 
@@ -15,3 +16,11 @@ p.result{
    100%{border-right: 5px solid #fff} 
 }
 
+/* 중앙 정렬 */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*  */

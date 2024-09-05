@@ -241,3 +241,29 @@ String.prototype.toKorChars = function() {
          clearInterval(inter);
        }
      }
+
+// 검색기능테스트
+
+// 검색 필드와 검색 버튼 가져오기
+const searchInput = document.querySelector('#search-input');
+const searchButton = document.querySelector('#search-button');
+
+// 검색 버튼 클릭 이벤트 리스너
+searchButton.addEventListener('click', function() {
+  const searchValue = searchInput.value.toLowerCase();  // 입력된 검색어 (소문자로 변환)
+
+  // 할일 리스트의 모든 항목 가져오기
+  const todos = document.querySelectorAll('#list li');
+
+  // 각 할일 항목을 검색어와 비교하여 필터링
+  todos.forEach(todo => {
+    const todoText = todo.querySelector('input[type="text"]').value.toLowerCase();  // 할일내용(소문자로 변환)
+
+    // 검색어와 일치하는 항목만 표시
+    if(todoText.includes(searchValue)) {
+      todo.style.display = "";  // 일치하면 표시
+    } else {
+      todo.style.display = "none";  // 일치하지 않으면 숨기기
+    }
+  });
+});
