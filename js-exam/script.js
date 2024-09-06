@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const registerButton = document.querySelector('book-register-div button[type="button"]');
   registerButton.addEventListener('click', registerBook);
-  
 });
 
 function registerBook() {
